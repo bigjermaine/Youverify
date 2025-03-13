@@ -6,31 +6,76 @@
 //
 
 import XCTest
+import CoreData
 @testable import Youverify
 
-final class YouverifyTests: XCTestCase {
+final class DessertCoredataViewmodelTests: XCTestCase {
+
+    var viewModel: DessertCoredataViewmodel!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Initialize the view model.
+        viewModel = DessertCoredataViewmodel()
+        
+        // Clean up any pre-existing data.
+        let context = viewModel.container.viewContext
+        for entity in viewModel.savedEntity {
+            context.delete(entity)
+        }
+        try? context.save()
+        viewModel.fetchbooking()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testAddBooking() throws {
+        // Given: the current count of saved entities.
+        let initialCount = viewModel.savedEntity.count
+        
+        // When: we add a new booking.
+        viewModel.addBooking(Name: "Test Dessert")
+        viewModel.fetchbooking()
+        
+        // Then: the count should increase by one.
+        XCTAssertEqual(viewModel.savedEntity.count, initialCount + 1, "Adding a booking should increase the count by 1")
+        
+        // And: the newly added entity should have the expected name.
+        let lastEntity = viewModel.savedEntity.last
+        XCTAssertEqual(lastEntity?.name, "Test Dessert", "The last entity's name should be 'Test Dessert'")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testDeleteBooking() throws {
+        // First, add a booking so that there's something to delete.
+        viewModel.addBooking(Name: "Test Dessert")
+        viewModel.fetchbooking()
+        let countAfterAdding = viewModel.savedEntity.count
+        XCTAssertGreaterThan(countAfterAdding, 0, "There should be at least one booking after adding")
+        
+        // When: we delete the last added entity.
+        viewModel.delete(index: IndexSet(integer: countAfterAdding - 1))
+        viewModel.fetchbooking()
+        
+        // Then: the count should be decreased by one.
+        XCTAssertEqual(viewModel.savedEntity.count, countAfterAdding - 1, "Deleting a booking should reduce the count by 1")
+    }
+    
+    func testFetchBooking() throws {
+        // Clean all data.
+        let context = viewModel.container.viewContext
+        for entity in viewModel.savedEntity {
+            context.delete(entity)
         }
+        try context.save()
+        viewModel.fetchbooking()
+        XCTAssertEqual(viewModel.savedEntity.count, 0, "After deleting all entities, the count should be 0")
+        
+        // When: adding a new booking.
+        viewModel.addBooking(Name: "Another Dessert")
+        viewModel.fetchbooking()
+        
+        // Then: the savedEntity count should be 1.
+        XCTAssertEqual(viewModel.savedEntity.count, 1, "After adding one entity, the count should be 1")
     }
-
 }
