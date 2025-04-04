@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct DescriptiveShowView: View {
-    @EnvironmentObject var  dessertcore:DessertCoredataViewmodel
+    @EnvironmentObject var  dessertcore:DessertCoreDataViewmodel
     @State private var dataSavedPresented = false
     var mealdetails:MealDetail?
     var body: some View {

@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 import SwiftUI
 
-class DessertCoredataViewmodel:ObservableObject {
+class DessertCoreDataViewmodel:ObservableObject {
     @Published  var cartCount = 0
     let container:NSPersistentContainer
 

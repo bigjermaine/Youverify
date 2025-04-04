@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TabBar: View {
     @StateObject var dessertviewmodel = DessertViewModel()
-    @StateObject var  dessertcore = DessertCoredataViewmodel()
+    @StateObject var  dessertcore = DessertCoreDataViewmodel()
     var body: some View {
         TabView{
            BrowseView()

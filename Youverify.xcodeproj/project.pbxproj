@@ -30,7 +30,7 @@
 		D020FEC82D82ED220018F434 /* DescriptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FEC72D82ED220018F434 /* DescriptiveView.swift */; };
 		D020FECB2D82ED500018F434 /* DescriptiveShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FECA2D82ED500018F434 /* DescriptiveShowView.swift */; };
 		D020FED02D82EEB20018F434 /* Dessert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D020FECE2D82EEB20018F434 /* Dessert.xcdatamodeld */; };
-		D020FED22D82EEE20018F434 /* DessertCoredataViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FED12D82EEE20018F434 /* DessertCoredataViewmodel.swift */; };
+		D020FED22D82EEE20018F434 /* DessertCoreDataViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FED12D82EEE20018F434 /* DessertCoreDataViewmodel.swift */; };
 		D020FED42D82EF0A0018F434 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FED32D82EF0A0018F434 /* SettingsView.swift */; };
 		D020FED62D82EF1C0018F434 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FED52D82EF1C0018F434 /* SignUpView.swift */; };
 		D020FED82D82EF2C0018F434 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020FED72D82EF2C0018F434 /* ProfileView.swift */; };
@@ -80,7 +80,7 @@
 		D020FEC72D82ED220018F434 /* DescriptiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiveView.swift; sourceTree = "<group>"; };
 		D020FECA2D82ED500018F434 /* DescriptiveShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiveShowView.swift; sourceTree = "<group>"; };
 		D020FECF2D82EEB20018F434 /* Dessert.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dessert.xcdatamodel; sourceTree = "<group>"; };
-		D020FED12D82EEE20018F434 /* DessertCoredataViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCoredataViewmodel.swift; sourceTree = "<group>"; };
+		D020FED12D82EEE20018F434 /* DessertCoreDataViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCoreDataViewmodel.swift; sourceTree = "<group>"; };
 		D020FED32D82EF0A0018F434 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D020FED52D82EF1C0018F434 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D020FED72D82EF2C0018F434 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		D020FEA62D82D5160018F434 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				D020FED12D82EEE20018F434 /* DessertCoredataViewmodel.swift */,
+				D020FED12D82EEE20018F434 /* DessertCoreDataViewmodel.swift */,
 				D020FEA72D82D5280018F434 /* ApiManager.swift */,
 				D020FECE2D82EEB20018F434 /* Dessert.xcdatamodeld */,
 			);
@@ -419,7 +419,7 @@
 				D020FEA82D82D5280018F434 /* ApiManager.swift in Sources */,
 				D020FEAB2D82D5BE0018F434 /* MealModel.swift in Sources */,
 				D020FE8D2D827FA30018F434 /* YouverifyApp.swift in Sources */,
-				D020FED22D82EEE20018F434 /* DessertCoredataViewmodel.swift in Sources */,
+				D020FED22D82EEE20018F434 /* DessertCoreDataViewmodel.swift in Sources */,
 				D020FED82D82EF2C0018F434 /* ProfileView.swift in Sources */,
 				D020FEDE2D82EF6B0018F434 /* TabBar.swift in Sources */,
 				D020FED02D82EEB20018F434 /* Dessert.xcdatamodeld in Sources */,

@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct FavouritesView: View {
-    @EnvironmentObject var dessertcore: DessertCoredataViewmodel
+    @EnvironmentObject var dessertcore: DessertCoreDataViewmodel
     @State private var dessertPrices: [Int: Double] = [:]
 
     var body: some View {
@@ -85,6 +85,6 @@ struct FavouritesView: View {
 
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouritesView().environmentObject(DessertCoredataViewmodel())
+        FavouritesView().environmentObject(DessertCoreDataViewmodel())
     }
 }
